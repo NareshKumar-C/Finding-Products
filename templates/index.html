@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Finder Web Application</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+    <h1 class="headi">Product Finder Web Application</h1>
+    <hr style="margin-top: 10px; border-bottom: 2px solid red;">
+    </nav>
+
+    <!-- The Below Is for a pop-up showing-->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <img id="m-img" >
+            <h2 id="m-name" style="text-align:center; padding: 10px; color: red;"></h2>
+            <p id="m-desc" style="font-size: 17px;  text-align: justify; padding: 2px; line-height: 1.3;"></p>
+
+            <h4><b>Brand:</b> <span id="m-brand"></span></h4>
+            <h4><b>Price:</b> ₹<span id="m-price"></span></h4>
+            <h4><b>Resolution:</b> <span id="m-res"></span></h4>
+            <h4><b>Inches:</b> <span id="m-inch"></span></h4>
+            <h4><b>OS:</b> <span id="m-os"></span></h4>
+            <h4><b>Stock:</b> <span id="m-stock"></span></h4>
+          
+        </div>
+    </div>
+    <!--  -->
+
+    <div class="pane">
+
+        <div class="lpane">
+            <h2>Filters</h2>
+            <form action="">
+                <label for="brand">Brands</label>
+                <select name="brand" class="sel">
+                    <option value="def">Select the Brand</option>
+                    {% for item in items| unique(attribute="brand") %}
+                    <option value="{{item.brand}}">{{item.brand}}</option>
+                    {% endfor %}
+                </select>
+                <br>
+
+                <label for="range">Price Range</label>
+                <select name="range" class="sel" >
+                    <option value="def">Select the Price Range</option>
+                    <option value="18000-20000">₹18,000 - ₹20,000</option>
+                    <option value="20001-30000">₹20,001 - ₹30,000</option>
+                    <option value="30001-40000">₹30,001 - ₹40,000</option>
+                    <option value="40001-50000">₹40,001 - ₹50,000</option>
+                    <option value="50001-70000">₹50,001 - ₹70,000</option>
+                    <option value="70001-90000">₹70,001 - ₹90,000</option>
+                    <option value="90001-100000">₹90,001 - ₹1,00,000</option>
+                    <option value="100001-150000">₹1,00,001 - ₹1,50,000</option>
+                </select>
+                <br>
+
+                <label for="models">Display Technology</label>
+                <select name="models" class="sel">
+                    <option value="def">Select the Display Technology</option>
+                    <option value="LED">LED</option>
+                    <option value="LCD">LCD</option>
+                    <option value="OLED">OLED</option>
+                    <option value="QLED">QLED</option>
+                </select>
+                <br>
+
+                 <label for="displayresolution">Display Resolution</label>
+                <select name="displayresolution" class="sel">
+                    <option value="def">Select the Resolution</option>
+                    <option value="4K/Ultra HD">4K/Ultra HD</option>
+                    <option value="1080p/Full HD">1080p/Full HD</option>
+                    <option value="720p/HD">720p/HD</option>
+                </select>
+                <br>
+
+                <label for="os">Operating System</label>
+                <select name="os" class="sel">
+                    <option value="def">Select the Operating System</option>
+                    <option value="Android">Android</option>
+                    <option value="Google TV">Google TV</option>
+                    <option value="Web OS">Web OS</option>
+                </select>
+                <br>
+
+                <label for="inches">Inches</label>
+                <select name="inches" class="sel">
+                    <option value="def">Select the Inches</option>
+                    <option value="16 inches">16 inches</option>
+                    <option value="27 inches">27 inches</option>
+                    <option value="32 inches">32 inches</option>
+                    <option value="43 inches">43 inches</option>
+                    <option value="55 inches">55 inches</option>
+                </select>
+                <br>
+            </form>
+            <button id="clear">Clear Filters</button>
+        </div>
+
+        <div class="rpane">
+            <h2 style="text-decoration: underline;">Products</h2>
+            <div id="product-list" class="product-grid">
+                <div class="r1">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+</html>
