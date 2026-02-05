@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: "Yrsa", serif;
+  background-image: url(/static/images/211.png);
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 1000;
+}
+.modal-content{
+    background: white;
+    padding: 20px;
+    width: 400px;
+    gap: 10px;
+    border-radius: 20px;
+    position: relative;
+}
+.modal-content img{
+    width: 80%;
+    margin-left: 45px;
+    border-radius: 15px;
+}
+.close{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.headi{
+    text-align: center;
+    font-size: 35px;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+.pane{
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+}
+
+
+.lpane{
+    background-image: url(211.png);
+    width: 31%;
+    border-radius: 30px;
+    margin-top: 60px;
+    padding: 10px;
+    border: 3px solid white;
+}
+.lpane h2{
+    text-align: center;
+    text-decoration: underline;
+}
+.lpane form{
+    display: grid;
+    font-size: 25px;
+    padding: 40px;
+    margin-left: 30px;
+}
+.sel{
+    width: 70%;
+    height: 30px; 
+    border: none; 
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    left: 35px;
+    top: 10px;
+    cursor: pointer;
+}
+.sel:focus{
+    outline: none;
+}
+#clear{
+   width: 30%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: greenyellow;
+    color: red;
+    margin-left: 45px;
+    cursor: pointer;
+}
+#clear:hover{
+    background-color: white;
+    color: black;
+}
+
+.rpane{
+    background-image: url(211.png);
+    width: 62%;
+    border-radius: 30px;
+    border: 2px solid white;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+}
+#product-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+}
+.r1{
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;   
+    padding: 15px; 
+}
+.r{
+    width: 270px;
+    border: 1px solid black;
+    border-radius: 10%;
+    transition: all 0.3s ease;
+    padding: 10px;
+    background-color: white;
+}
+.r:hover{
+    transform: scale(1.1);
+}
+.r img{
+    width: 89%;
+    height: 48%;
+    position: relative;
+    top: 10px;
+}
+.r h2{
+    font-weight: 500;
+    margin-top: 15px;
+}
+.r h3{
+    font-size: 40px;
+    margin-top: 10px;
+}
+.r button{
+    width: 120px;
+    height: 40px;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    margin-top: 10px;
+}
